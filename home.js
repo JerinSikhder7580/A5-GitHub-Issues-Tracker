@@ -11,15 +11,39 @@ const handleActive = (id) => {
 
     activeButton.classList.add("bg-primary", "text-white")
 
+    fetchHomeData(activeButton)
+
 }
 
 // RENDER HOME SECTION
-const fetchHomeData = () => {
+const dataCount = document.getElementById("data-count")
+let allData
+const fetchHomeData = (activeButton) => {
     fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
         .then(res => res.json())
         .then(data => {
             console.log(data.data)
-            renderHomePage(data.data)
+            allData = data.data
+            if (!activeButton) {
+                renderHomePage(data.data)
+            }
+            else if (activeButton.id === "all") {
+                dataCount.innerText = data.data.length
+                renderHomePage(data.data)
+            }
+            else if (activeButton.id === "open") {
+                const filteredData = data.data.filter((data) => data.status === "open")
+                dataCount.innerText = filteredData.length
+                renderHomePage(filteredData)
+
+            }
+            else if (activeButton.id === "close") {
+                const filteredData = data.data.filter((data) => data.status === "closed")
+                dataCount.innerText = filteredData.length
+                renderHomePage(filteredData)
+            }
+
+
         })
 }
 fetchHomeData()
@@ -29,7 +53,7 @@ const renderHomePage = async (allData) => {
     cardMother.innerHTML = ""
 
     const openCloseIcon = (status) => {
-        console.log(status)
+        // console.log(status)
         if (status === "open") {
             return "./assets/Open-Status.png"
         }
@@ -77,10 +101,10 @@ const renderHomePage = async (allData) => {
 
         const divTag = document.createElement("div")
         divTag.classList.add("flex", "flex-col", "border-t-3", "rounded", "shadow")
-        if (data.priority === "high" || data.priority === "medium") {
+        if (data.status === "open") {
             divTag.classList.add("border-t-green-600")
         }
-        else if (data.priority === "low") {
+        else if (data.status === "closed") {
             divTag.classList.add("border-t-purple-500")
         }
 
@@ -115,4 +139,19 @@ const renderHomePage = async (allData) => {
     }
 }
 
-// OPEN SECTION....................................................................................................................................................................................................
+// SEARCH SECTION....................................................................................................................................................................................................
+const handleSearch = () => {
+    const search = document.getElementById("search").value.toLowerCase()
+
+
+    fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${search}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.data)
+            renderHomePage(data.data)
+            dataCount.innerText = data.data.length
+        })
+
+
+
+}
