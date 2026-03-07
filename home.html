@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- daisy+tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+
+
+
+</head>
+
+<body class="bg-base-200 min-h-screen ">
+
+    <!-- header -->
+    <div class="bg-white">
+
+        <div class="max-w-[1600px] mx-auto px-20 py-4 ">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img class="w-9  mr-3" src="./assets/github-logo.png" alt="">
+                    <h1 class="font-semibold text-2xl">GitHub Issues Tracker</h1>
+                </div>
+
+                <div class="flex gap-2">
+
+                    <div class="border border-[#d8dbdf] flex items-center h-[44px] px-4 rounded-sm">
+                        <span class=""><i class="fa-solid fa-magnifying-glass mr-1"></i></span>
+                        <input id="input" class="border-none focus:outline-none" type="text"
+                            placeholder="Search issues..." required />
+                    </div>
+
+                    <button class="btn btn-primary join-item h-[44px]"> <span><i class="fa-solid fa-plus"></i></span>New
+                        issues</button>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div>
+        <section>
+            <div class="bg-base-100 mt-7 p-8">
+                <button id="all" onclick="handleActive('all')"
+                    class="btn px-11 bg-primary text-white  toggleBtn">All</button>
+                <button id="open" onclick="handleActive('open')" class="btn px-11  toggleBtn">Open</button>
+                <button id="close" onclick="handleActive('close')" class="btn px-11 toggleBtn">Close</button>
+            </div>
+        </section>
+    </div>
+
+
+    <div>
+        <section>
+            <div class="bg-base-100 mt-7 p-8 flex justify-between items-center shadow ">
+                <div class="flex items-center">
+                    <div class="bg-[#ece4ff] p-2 rounded-full mr-3">
+
+                        <img src="./assets/Aperture.png" alt="">
+                    </div>
+                    <div>
+                        <h1 class="font-semibold text-lg">50 Issues</h1>
+                        <p class="text-gray-500">Track and manage your project issues</p>
+
+                    </div>
+                </div>
+
+
+                <div class="flex gap-2">
+                    <h1>
+                        <div class="bg-green-600 h-3 aspect-square mr-1 inline-block rounded-full "></div>Open
+                    </h1>
+                    <h1>
+                        <div class="bg-purple-500 h-3 aspect-square mr-1 inline-block rounded-full"></div>Close
+                    </h1>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <div>
+        <section>
+            <div id="card-container-home" class="p-6 bg-[#FBFBFB] grid grid-cols-4 gap-3">
+                <!-- cards  -->
+                
+                <!-- cards  -->
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="home.js"></script>
+
+
+
+</body>
+
+</html>
