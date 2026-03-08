@@ -15,7 +15,7 @@ const handleActive = (id) => {
 
 }
 
-// RENDER HOME SECTION
+// RENDER HOME SECTION******
 const dataCount = document.getElementById("data-count")
 let allData
 const fetchHomeData = (activeButton) => {
