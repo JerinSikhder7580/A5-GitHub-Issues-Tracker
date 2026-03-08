@@ -163,8 +163,6 @@ const handleSearch = () => {
             dataCount.innerText = data.data.length
         })
 
-
-
 }
 
 // Modal 
