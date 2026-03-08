@@ -184,7 +184,7 @@ const handleModal = (id) => {
 
 
     const modalData = allData.find((data) => data.id === id)
-    console.log(modalData)
+    // console.log(modalData)
     const modalContainer = document.getElementById("modal-container")
     modalContainer.innerHTML = `
     <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
