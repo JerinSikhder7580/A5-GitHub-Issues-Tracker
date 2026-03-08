@@ -1,7 +1,0 @@
-                     // <span class="text-red-500 bg-red-200 px-2 py-[6px] text-xs rounded-full">
-                            //     <i class="fa-solid fa-bug mr-1"></i>Bug</span>
-
-                            // <span
-                            //     class="bg-[#FFF8DB] text-[#D97706] border border-[#FDE68A] rounded-full px-2 py-[6px text-xs]"><i
-                            //         class="fa-solid fa-crosshairs mr-1"></i>
-                            //         help wanted</span>
