@@ -27,22 +27,23 @@
     <!-- header -->
     <div class="bg-white">
 
-        <div class="max-w-[1600px] mx-auto px-20 py-4 ">
-            <div class="flex justify-between items-center">
+        <div class="max-w-[1600px] mx-auto px-3 sm:px-20 py-4 ">
+            <div class="sm:flex  justify-between items-center">
                 <div class="flex items-center">
-                    <img class="w-9  mr-3" src="./assets/github-logo.png" alt="">
-                    <h1 class="font-semibold text-2xl">GitHub Issues Tracker</h1>
+                    <img class="w-9  mr-3 mb-3 sm:mb-0" src="./assets/github-logo.png" alt="">
+                    <h1 class="font-semibold text-2xl ">GitHub Issues Tracker</h1>
                 </div>
 
-                <div class="flex gap-2">
+                <div class="flex gap-2 justify-between">
 
-                    <div class="border border-[#d8dbdf] flex items-center h-[44px] px-4 rounded-sm">
+                    <div class="border border-[#d8dbdf] flex items-center  h-[44px] px-4 rounded-sm w-full sm:w-[inherit]">
                         <span class=""><i class="fa-solid fa-magnifying-glass mr-1"></i></span>
-                        <input oninput="handleSearch()" id="search" class="border-none focus:outline-none" type="text"
+                        <input oninput="handleSearch()" id="search" class="border-none focus:outline-none " type="text"
                             placeholder="Search issues..." required />
                     </div>
 
-                    <button class="btn btn-primary join-item h-[44px]" type="button"> <span><i class="fa-solid fa-plus"></i></span>New
+                    <button class="btn btn-primary  join-item h-[44px]" type="button"> <span><i
+                                class="fa-solid fa-plus"></i></span>New
                         issues</button>
 
 
@@ -55,7 +56,7 @@
 
     <div>
         <section>
-            <div class="bg-base-100 mt-7 p-8">
+            <div class="bg-base-100 mt-7 p-5 sm:p-8">
                 <button id="all" onclick="handleActive('all')"
                     class="btn px-11 bg-primary text-white  toggleBtn">All</button>
                 <button id="open" onclick="handleActive('open')" class="btn px-11  toggleBtn">Open</button>
@@ -97,9 +98,9 @@
 
     <div>
         <section>
-            <div id="card-container-home" class="p-6 bg-[#FBFBFB] grid grid-cols-4 gap-3">
+            <div id="card-container-home" class=" sm:p-6 py-2 bg-[#FBFBFB] grid grid-cols-2 sm:grid-cols-4 gap-3 ">
                 <!-- cards  -->
-                
+
                 <!-- cards  -->
             </div>
         </section>
@@ -109,7 +110,13 @@
 
 
 
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
 
+
+    <div id="modal-container">
+
+    </div>
 
 
 
